@@ -229,7 +229,7 @@ python manage.py createsuperuser
 
 # Run server
 python manage.py runserver
+```
 
 # Open in browser:
-
 http://127.0.0.1:8000/
