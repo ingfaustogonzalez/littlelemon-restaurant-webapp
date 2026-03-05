@@ -220,7 +220,7 @@ git clone https://github.com/yourusername/littlelemon-restaurant-django-website.
 cd littlelemon-restaurant-django-website
 
 # Install dependencies
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # Run migrations
 python3 manage.py migrate
