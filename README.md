@@ -1,48 +1,44 @@
-# 🍋 Little Lemon Restaurant Web App
+# 🍋 Little Lemon Restaurant Django Website
 
-## 📌 Repository Name
-**littlelemon-restaurant-webapp**
+## 📌 Repository Name  
+**littlelemon-restaurant-django-website**
 
-## 📖 Description
-Full-stack Django web application for a fictional restaurant. Includes dynamic menu pages, detailed menu item views using URL parameters, booking functionality, admin panel integration, and template inheritance.
+## 📖 Description  
+A Django web application implementing the core pages of the fictional Little Lemon restaurant website: Home, About, Booking, Menu, and Menu Item. Demonstrates model creation, migrations, admin customization, dynamic templates, URL parameter handling for detailed menu item views, database‑driven content, and a clean, well‑structured template architecture.
+
+### Short Description  
+A Django project for the fictional Little Lemon restaurant featuring dynamic menu pages, database‑driven content, and a clean template structure.
 
 ---
 
 # 🚀 Project Overview
 
-This project is a restaurant website built using the Django framework. It demonstrates full-stack development concepts including:
+This project is a full-stack Django restaurant website built as part of a backend development assessment. It demonstrates:
 
 - Django Models & Migrations  
-- Dynamic Views  
-- URL Routing with Parameters  
-- Template Inheritance  
-- Django Admin Panel  
-- Database Integration (SQLite)  
-- Static Files Management  
-- Form Handling  
+- Dynamic Views and URL Routing  
+- Template Inheritance and Django Template Language (DTL)  
+- Django Admin Panel customization  
+- Database-driven content using SQLite  
+- Static files and image handling  
+- Form processing and data persistence  
+- URL parameters for dynamic menu item pages  
 
-The application simulates a real-world restaurant website called **Little Lemon**, a Mediterranean restaurant owned by Mario and Adrian.
+The website represents **Little Lemon**, a fictional Mediterranean restaurant owned by Mario and Adrian.
 
 ---
 
 # 🏗️ Website Layout Structure
 
-## 🔝 Header
-- Displays the **Little Lemon logo with name**, centered at the top.
-- Below the logo is a horizontal navigation bar with links:
-  - Home
-  - About
-  - Menu
-  - Book  
+## 🔝 Header  
+- Centered **Little Lemon logo + restaurant name**  
+- Horizontal navigation bar with links:  
+  **Home | About | Menu | Book**  
+- All links displayed side-by-side in a clean, modern layout  
 
-All navigation links appear side-by-side in a clean horizontal layout.
-
----
-
-## 🔻 Footer
-- Left side: Little Lemon logo (without the name).
-- Right side:  
-  `Copyright Little Lemon`
+## 🔻 Footer  
+- Left: Little Lemon logo (without the name)  
+- Right: `Copyright Little Lemon`
 
 ---
 
@@ -54,52 +50,52 @@ All navigation links appear side-by-side in a clean horizontal layout.
 
 The Home page uses a **2-row by 3-column layout**.
 
-### 🔹 First Row (Spans all 3 columns)
-Displays:
-- **SPECIAL OFFER**
-- *30% Off This Weekend*
-- Functional **“Book Now”** button
+### 🔹 First Row (full width)
+- **SPECIAL OFFER**  
+- *30% Off This Weekend*  
+- Fully functional **Book Now** button (fixed from the original template)
 
-### 🔹 Second Row
+### 🔹 Second Row (3 columns)
 
-#### Column 1 – Our New Menu
+#### Column 1 — Our New Menu
 - Representative image  
-- Description of seasonal Mediterranean items  
-- Link: **See our new menu**
+- Description of seasonal Mediterranean dishes  
+- Link: *See our new menu*
 
-#### Column 2 – Book a Table
+#### Column 2 — Book a Table
 - Representative image  
-- Description encouraging reservations  
-- Link: **Book your table now**
+- Invitation to reserve a table  
+- Link: *Book your table now*
 
-#### Column 3 – Opening Hours
+#### Column 3 — Opening Hours
 - Representative image  
-- Weekly schedule:
-  - Mon–Fri: 2pm – 10pm  
-  - Sat: 2pm – 11pm  
-  - Sun: 2pm – 9pm  
+- Weekly schedule:  
+  - Mon–Fri: 2pm–10pm  
+  - Sat: 2pm–11pm  
+  - Sun: 2pm–9pm  
 
-### 📸 Home Page Screenshot
+### 📸 Home Page Screenshot  
 ![Home Page](assets/Screenshot_1_home.png)
 
 ---
 
 ## 👨‍🍳 2. About Page
 
-Displays restaurant background and story:
+The About page introduces the restaurant:
 
-- Family-owned Mediterranean restaurant  
-- Based in Chicago, Illinois  
+- Family-owned Mediterranean restaurant in Chicago  
 - Inspired by Italian, Greek, and Turkish cuisine  
 - Seasonal rotating menu (12–15 items)  
 - Rustic, relaxed atmosphere  
-- Owned by Mario and Adrian  
+- Owned by brothers **Mario and Adrian**  
+- Mario: chef using family recipes  
+- Adrian: marketing and menu expansion  
 
 Right side:
-- Image of the two owners  
+- Photo of the owners  
 - Caption: *Little Lemon owners Mario and Adrian*
 
-### 📸 About Page Screenshot
+### 📸 About Page Screenshot  
 ![About Page](assets/Screenshot_2_about.png)
 
 ---
@@ -108,91 +104,92 @@ Right side:
 
 Displays all menu items dynamically from the database.
 
-Each item shows:
-- Item name (clickable link)  
-- Price formatted as: `$XX.00`
+Each item includes:
+- **Clickable item name** (links to detail page)  
+- **Price** formatted as `$XX.00`  
 
 Example:
-Bruschetta
-$11.00
+`Bruschetta
+$11.00`
 
 
-### 📸 Menu Page Screenshot
+### 📸 Menu Page Screenshot  
 ![Menu Page](assets/Screenshot_3_menu.png)
 
 ---
 
 ## 🍲 Menu Item Detail Page
 
-When clicking a menu item (e.g., Bruschetta), the page displays:
+When clicking a menu item (e.g., *Bruschetta*), the page shows:
 
 - Breadcrumb navigation:  
-  `Home / Menu / Item Name`
-- Item Name  
+  `Home / Menu / Bruschetta`
+- Item name  
 - Full description  
-- Formatted price: `Price: $11.00`  
-- Image of the dish (loaded dynamically from static folder)
+- Price formatted as: **Price: $11.00**  
+- Dish image loaded dynamically from `/static/img/menu_items/`
 
 This page uses:
-- URL parameter (`pk`)
-- `objects.get(pk=pk)` query
+- URL parameter `pk`
+- `Menu.objects.get(pk=pk)`
 - Dynamic template rendering
 
-### 📸 Menu Item Screenshot
+### 📸 Menu Item Screenshot  
 ![Menu Item](assets/Screenshot_4_menu_item_1.png)
 
 ---
 
 ## 📅 4. Book (Reservation) Page
 
-Displays a reservation form:
+Displays a reservation form with fields:
 
 - First Name  
 - Last Name  
 - Guest Number  
 - Comment  
-- Submit Button  
+- Submit button  
 
 Right side:
-- Interactive Google Map (zoomable & movable)
+- **Interactive Google Map** showing the restaurant location  
+  - Zoomable  
+  - Movable  
 
-### 📸 Booking Page Screenshot
+### 📸 Booking Page Screenshot  
 ![Booking Page](assets/Screenshot_5_book.png)
 
 ---
 
 # 🗄️ Database Integration
 
-The application uses **SQLite** as the database.
+The project uses **SQLite** as its database.
 
 ---
 
-## 📌 Booking Table
+## 📌 Booking Table (`restaurant_booking`)
 
-After submitting the reservation form, data is stored in the `restaurant_booking` table.
+Stores reservation form submissions:
 
-Fields:
-- `id`
-- `first_name`
-- `last_name`
-- `guest_number`
-- `comment`
+- `id`  
+- `first_name`  
+- `last_name`  
+- `guest_number`  
+- `comment`  
 
-### 📸 Booking Table Screenshot
+### 📸 Booking Table Screenshot  
 ![Booking Table](assets/Screenshot_6_booking_table.png)
 
 ---
 
-## 📌 Menu Table
+## 📌 Menu Table (`restaurant_menu`)
 
-The `Menu` model stores:
+Stores menu items:
 
-- `id`
-- `name`
-- `price`
-- `menu_item_description`
+- `id`  
+- `name`  
+- `price`  
+- `menu_item_description`  
 
-### 📸 Menu Table Screenshot
+### 📸 Menu Table Screenshot  
 ![Menu Table](assets/Screenshot_7_menu_table.png)
 
 ---
@@ -206,6 +203,7 @@ The `Menu` model stores:
 - CSS3  
 - Django Template Language (DTL)  
 - Django Admin Panel  
+- Google Maps Embed  
 
 ---
 
@@ -213,10 +211,10 @@ The `Menu` model stores:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/littlelemon-restaurant-webapp.git
+git clone https://github.com/yourusername/littlelemon-restaurant-django-website.git
 
 # Navigate into project directory
-cd littlelemon-restaurant-webapp
+cd littlelemon-restaurant-django-website
 
 # Install dependencies
 pip install -r requirements.txt
@@ -227,9 +225,8 @@ python manage.py migrate
 # Create superuser (optional)
 python manage.py createsuperuser
 
-# Run server
+# Start development server
 python manage.py runserver
-```
 
 # Open in browser:
 `http://127.0.0.1:8000/`
