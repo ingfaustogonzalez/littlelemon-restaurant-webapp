@@ -9,6 +9,9 @@ A Django web application implementing the core pages of the fictional Little Lem
 ### Short Description  
 A Django project for the fictional Little Lemon restaurant featuring dynamic menu pages, database‑driven content, and a clean template structure.
 
+### 📚 Course Project  
+This project was created as the final assessment for the **Django Web Framework** module, part of the **Meta Back-End Developer Professional Certificate** offered on **Coursera**. It demonstrates the practical application of Django concepts taught throughout the course, including models, views, templates, URL routing, and database integration.
+
 ---
 
 # 🚀 Project Overview
@@ -227,6 +230,10 @@ python manage.py createsuperuser
 
 # Start development server
 python manage.py runserver
+```
 
 # Open in browser:
 `http://127.0.0.1:8000/`
+
+# 📬 Author
+Fausto Gonzalez
